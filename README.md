@@ -32,6 +32,14 @@ release, the agent has been successfully applied to other domains such as
 We include a [Dockerfile][dockerfile] that serves as a reference for the
 prerequisites and commands needed to run the code.
 
+Install [Docker][https://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt]
+
+```sh
+docker build -t impala -f Dockerfile .
+docker run -it impala 
+# docker images
+```
+
 ### Single Machine Training on a Single Level
 
 Training on `explore_goal_locations_small`. Most runs should end up with average
