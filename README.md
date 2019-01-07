@@ -4,40 +4,21 @@ This repository contains an implementation of "Importance Weighted Actor-Learner
 Architectures", along with a *dynamic batching* module. This is not an
 officially supported Google product.
 
+*This project uses the [deepmind/scalable_agent](https://github.com/deepmind/scalable_agent) as template*
+
 For a detailed description of the architecture please read [our paper][arxiv].
 Please cite the paper if you use the code from this repository in your work.
-
-### Bibtex
-
-```
-@inproceedings{impala2018,
-  title={IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures},
-  author={Espeholt, Lasse and Soyer, Hubert and Munos, Remi and Simonyan, Karen and Mnih, Volodymir and Ward, Tom and Doron, Yotam and Firoiu, Vlad and Harley, Tim and Dunning, Iain and others},
-  booktitle={Proceedings of the International Conference on Machine Learning (ICML)},
-  year={2018}
-}
-```
 
 ## Running the Code
 
 ### Prerequisites
 
-[TensorFlow][tensorflow] >=1.9.0-dev20180530, the environment
-[DeepMind Lab][deepmind_lab] and the neural network library
-[DeepMind Sonnet][sonnet]. Although we use [DeepMind Lab][deepmind_lab] in this
-release, the agent has been successfully applied to other domains such as
-[Atari][arxiv], [Street View][learning_nav] and has been modified to
-[generate images][generate_images].
-
-We include a [Dockerfile][dockerfile] that serves as a reference for the
-prerequisites and commands needed to run the code.
-
-Install [Docker][https://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt]
+- [Docker](https://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-16-04-pt) installed
 
 ```sh
 docker build -t impala -f Dockerfile .
-docker run -it impala 
 # docker images
+docker run -it impala:latest /bin/bash 
 ```
 
 ### Single Machine Training on a Single Level
@@ -94,3 +75,14 @@ python experiment.py --mode=test --level_name=dmlab30 --dataset_path=[...] \
 [tensorflow]: https://github.com/tensorflow/tensorflow
 [dockerfile]: Dockerfile
 [dmlab30]: https://github.com/deepmind/lab/tree/master/game_scripts/levels/contributed/dmlab30
+
+### Bibtex
+
+```
+@inproceedings{impala2018,
+  title={IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures},
+  author={Espeholt, Lasse and Soyer, Hubert and Munos, Remi and Simonyan, Karen and Mnih, Volodymir and Ward, Tom and Doron, Yotam and Firoiu, Vlad and Harley, Tim and Dunning, Iain and others},
+  booktitle={Proceedings of the International Conference on Machine Learning (ICML)},
+  year={2018}
+}
+```
